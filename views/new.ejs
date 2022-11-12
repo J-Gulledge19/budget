@@ -5,10 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
-    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.0/normalize.css">
+    <link  rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/skeleton/2.0.4/skeleton.css">
     <title>Document</title>
 </head>
 <body>
+    <div class="container">
+
+        <h1>New Budget Item</h1>
+        
+        <form action="/budget" method="POST">
+            Name: <input type="text" name="name" /><br/>
+            Date: <input type="text" name="date" /><br/>
+            From: <input type="text" name="from" /><br/>
+            Amount: <input type="text" name="amount" /><br/>
+            Comments: <input type="text" name="tags" /><br/>
+            <input type="submit" value="Add Budget Item "/>
+        </form>
+        <a href="/budget"><button>Return Home</button></a>
+    </div>
     
 </body>
 </html>
