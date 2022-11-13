@@ -12,6 +12,12 @@
 <body>
     <div class="container">
         <h1>Budget ALL</h1>
+
+        <% let total= allBudget.reduce((accumulator, object) => {
+            return accumulator + object.amount;
+          }, 0);
+        %>
+        <h5>Bank account total: <%=total%></h5>
         <table>
             <% for(let i = 0; i < allBudget.length; i++) { %>
                 <tr>
