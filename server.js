@@ -38,6 +38,11 @@ app.post("/budget", (req, res) => {
     res.redirect("/budget");
   });
 
+app.put("/budget/:id", (req, res) => {
+    budget[req.params.id] = req.body
+    res.redirect("/budget")
+})
+
 //SHOW ROUTE - Returns a single budget
 app.get("/budget/:index", (req, res) => {
     res.render("show.ejs", {
