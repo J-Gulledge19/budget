@@ -13,11 +13,15 @@
     <div class="container">
         <h1>Budget ALL</h1>
 
-        <% let total= allBudget.reduce((accumulator, object) => {
-            return accumulator + object.amount;
-          }, 0);
-        %>
-        <h5>Bank account total: <%=total%></h5>
+            <% const total = allBudget.reduce((accumulator, object) => {
+                return accumulator + object.amount;
+                }, 0);
+            %>
+            <%
+                const determineBg = total < 0 ? "red" : total > 1000 ? "green" : "normal"
+            %>
+        <h5 class=<%=`${determineBg}`%>>Bank account total: <%=total%></h5>
+        
         <table>
             <% for(let i = 0; i < allBudget.length; i++) { %>
                 <tr>
@@ -37,6 +41,22 @@
             </table>
             <a href="/budget/new"><button>Add Budget item</button></a>
     </div>
+    <style>
+        h5{
+            max-width: fit-content;
+            padding: 1rem;
+        }
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            background-color: green;
+        }
+        .normal{
+            background-color: white;
+        }
+    </style>
             
 
 </body>

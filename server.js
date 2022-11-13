@@ -16,6 +16,7 @@ app.get("/", (req, res) => res.redirect("/budget"))
 
 // HOME ROUTE
 app.get('/budget', (req, res) => {
+  
     res.render(
         'index.ejs',
         {
@@ -32,9 +33,15 @@ app.get('/budget/new', (req, res) => {
 
 // Create Route and redirect the user back to index
 app.post("/budget", (req, res) => {
-   
-    budget.push(req.body);
-  
+   const newBudget = {
+        date: req.body.date,
+        name: req.body.name,
+        from: req.body.from,
+        amount: parseInt(req.body.amount),
+        tags: req.body.tags
+   }
+    budget.push(newBudget);
+
     res.redirect("/budget");
   });
 
